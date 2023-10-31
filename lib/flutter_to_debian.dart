@@ -138,11 +138,11 @@ class FlutterToDebian {
     }
     return (await File(path.join(
       tempDir,
-      newPackageName + ".deb",
+      "$newPackageName.deb",
     )).copy(
       path.join(
         finalExecDir.path,
-        newPackageName + ".deb",
+        "$newPackageName.deb",
       ),
     ))
         .path;
@@ -298,7 +298,7 @@ Terminal=false
 Type=Application
 Categories=Utility;
 Keywords=Flutter;
-Icon=${appExecutableName}
+Icon=$appExecutableName
 """;
       await File(
         path.join(

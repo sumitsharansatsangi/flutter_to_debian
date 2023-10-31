@@ -182,7 +182,7 @@ class DependencyFinder {
         }
       }
       if (++ix % 10 == 0 && ix > 1) {
-        logStatus('${ix} of ${lines.length} lines processed...');
+        logStatus('$ix of ${lines.length} lines processed...');
       }
     }
   }
@@ -193,7 +193,7 @@ class DependencyFinder {
   }
 
   void logStatus(String message) {
-    stdout.write(message + '\r');
+    stdout.write('$message\r');
   }
 
   /// Fetches the needed info of the yaml file and the program [arguments].
@@ -225,8 +225,9 @@ class DependencyFinder {
       }
     }
     if (excludedLibs != null) this.excludedLibs = RegExp(excludedLibs);
-    if (excludedPackages != null)
+    if (excludedPackages != null) {
       this.excludedPackages = excludedPackages.split(',');
+    }
     return rc;
   }
 
